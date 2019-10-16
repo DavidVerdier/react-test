@@ -4,8 +4,18 @@ import ItemList from './ItemList';
 
 
 class App extends React.Component {
+    state = {articles : []};
+
     addArticle = (article) => {
-        console.log(article);
+        //let oldArticles = this.state.articles;
+
+        article.id = Date.now();
+        //let newArticles = [...oldArticles, article];
+        //this.setState({articles: newArticles});
+
+        this.state.articles.push(article);
+
+        console.log(this.state.articles);
     };
 
     render() {
