@@ -1,8 +1,14 @@
 import React from 'react';
 
-const ItemList  = () => {
+const ItemList = (props) => {
     return (
-      <div>ItemList component</div>
+        <div>
+            <ul>
+                {
+                    props.articles.map(article => <li key={article.id}>{article.quantity} {article.name}</li>)
+                }
+            </ul>
+        </div>
     );
 };
 
