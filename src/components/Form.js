@@ -9,6 +9,7 @@ class Form extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addArticle(this.state);
+        this.setState({name: '', quantity: 0})
     };
 
     render() {
