@@ -25,7 +25,10 @@ class App extends React.Component {
                     </div>
                 </div>
 
-                <Formulaire pseudo={this.state.pseudo} addMessage={this.addMessage} />
+                <Formulaire
+                    length={150}
+                    pseudo={this.state.pseudo}
+                    addMessage={this.addMessage} />
             </div>
         );
     }
