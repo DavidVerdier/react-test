@@ -2,12 +2,20 @@ import React from "react";
 import './App.css';
 import Formulaire from "./Formulaire";
 import Message from "./Message";
+import base from '../base';
 
 class App extends React.Component {
     state = {
         messages: {},
         pseudo: this.props.match.params.pseudo
     };
+
+    componentDidMount() {
+        base.syncState('/', {
+            context: this,
+            state: 'messages'
+        });
+    }
 
     addMessage = (message) => {
          const messages = {... this.state.messages};
