@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import './components/App.css';
+import Connexion from "./components/Connexion";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Connexion />, document.getElementById('root'));
 
