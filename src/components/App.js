@@ -1,11 +1,19 @@
 import React from "react";
 import './App.css';
+import Formulaire from "./Formulaire";
+import Message from "./Message";
 
 class App extends React.Component {
     render() {
         return (
             <div className="box" >
-                <h2>Titre</h2>
+                <div>
+                    <div className="messages">
+                        <Message/>
+                    </div>
+                </div>
+
+                <Formulaire />
             </div>
         );
     }
