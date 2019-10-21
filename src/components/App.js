@@ -1,14 +1,16 @@
-import React from "react";
+import React, {Component, createRef} from "react";
 import './App.css';
 import Formulaire from "./Formulaire";
 import Message from "./Message";
 import base from '../base';
 
-class App extends React.Component {
+class App extends Component {
     state = {
         messages: {},
         pseudo: this.props.match.params.pseudo
     };
+
+    messagesRef = createRef();
 
     componentDidMount() {
         base.syncState('/', {
@@ -17,8 +19,14 @@ class App extends React.Component {
         });
     }
 
+    componentDidUpdate() {
+        const ref = this.messagesRef.current;
+
+        ref.scrollTop = ref.scrollHeight;
+    }
+
     addMessage = (message) => {
-         const messages = {... this.state.messages};
+         const messages = {...this.state.messages};
          messages[`message-${Date.now()}`] = message;
 
          this.setState({messages});
@@ -40,7 +48,7 @@ class App extends React.Component {
         return (
             <div className="box" >
                 <div>
-                    <div className="messages">
+                    <div className="messages" ref={this.messagesRef}>
                         <div className="message">
                             {messages}
                         </div>
