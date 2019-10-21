@@ -36,6 +36,6 @@ const recettes = {
     ingredients: '200g de Chocolat, 125g de Beurre, 125g de Sucre, 4 Oeufs, 125g de Farine, 1 sachet de Levure',
     instructions: "Préchauffer le four à 180°C.\nFaire fondre le chocolat au bain-marie avec le beurre.\nMélanger les jaunes avec le sucre.\nAjouter le chocolat fondu.\nAjouter la farine et la levure.\nMonter les blancs en neige et incorporer le mélange précédent.\nCuire pendant 30 minutes.\nS'accorde bien avec un Banyuls."
   }
-}
+};
 
 export default recettes

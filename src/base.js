@@ -6,9 +6,9 @@ const firebaseApp = firebase.initializeApp({
   apiKey: 'xxx',
   authDomain: 'xxx',
   databaseURL: 'xxx'
-})
+});
 
-const base = Rebase.createClass(firebaseApp.database())
+const base = Rebase.createClass(firebaseApp.database());
 
 // This is a named export
 export { firebaseApp }
