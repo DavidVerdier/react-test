@@ -6,11 +6,27 @@ import recettes from "../recettes";
 import Admin from "./Admin";
 import Card from "./Card";
 
+import base from "../base";
+
 class App extends Component {
     state = {
         pseudo: this.props.match.params.pseudo,
         recettes: {}
     };
+
+    componentDidMount() {
+        this.ref = base.syncState(
+            `/${this.state.pseudo}/recettes`,
+            {
+                context: this,
+                state: 'recettes'
+            }
+        )
+    }
+
+    componentWillUnmount() {
+        base.removeBinding(this.ref);
+    }
 
     chargerExemple = () => {
         this.setState({recettes});
